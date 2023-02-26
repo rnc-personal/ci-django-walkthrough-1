@@ -38,6 +38,17 @@ def add_item(request):
     }
     return render(request, 'todo/add_item.html', context)
 
+# Edit item takes in the request and the id of the item to be edited
+# It uses a built in get_object_or_404 method to find the item to be edited
+# and check it exists safely
+# If the request is a post request then the form variable is populated
+# with the values from the request
+# We use the built in method form.is_valid() to check if
+# the form is valid (Django), save it and return
+# to the edit item page
+# the form variable also needs to have an instance of the item to be edited,
+# which we have gotten from the get_object_or_404 method
+
 
 def edit_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
