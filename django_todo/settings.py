@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': os.environ.get("DATABASE_URL")
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 }
 
