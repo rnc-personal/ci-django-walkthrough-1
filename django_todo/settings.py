@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import env
+if os.path.exists("env.py"):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-63qojsb$*6g=cto)6=s0k&)*mmzy&qrv9&6ofjwim^$330#^_m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ci-django-todo-walkthrough.herokuapp.com']
+ALLOWED_HOSTS = ['ci-django-todo-walkthrough.herokuapp.com', '8080-rncpersonal-cidjangowal-n7xxmqullrw.ws-eu90.gitpod.io']
 
 
 # Application definition
